@@ -21,9 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')
-->namespace('Admin')
-->name('admin.')
-->prefix('admin')
+->namespace('Admin')  //cartella dentro controllers
+->name('admin.')    //le rotte iniziano con admin
+->prefix('admin')  //l'url ha il prefisso /admin/
 ->group(function () {
     Route::get('/', 'AdminController@dashboard')->name('dashboard');
     Route::resource('posts', 'PostController');

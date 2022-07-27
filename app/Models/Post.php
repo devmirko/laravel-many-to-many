@@ -10,7 +10,7 @@ class Post extends Model
     use Slugger;
 
     protected $fillable = [
-        'title', 'content', 'excerpt', 'category_id', 'image', 'slug'
+        'title', 'content', 'excerpt', 'category_id', 'image', 'slug', 'user_id'
     ];
 
 
@@ -20,5 +20,19 @@ class Post extends Model
 
     public function tags() {
         return $this->belongsToMany('App\Models\Tag');
+    }
+
+    public function user() { // il belongs to sta dalla parte dell'1 della relazione e il nome deve essere singolare
+        return $this->belongsTo('App\Models\User');
+    }
+
+
+
+
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
