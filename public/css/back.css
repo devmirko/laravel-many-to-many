@@ -10860,3 +10860,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.tag {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: violet;
+  border-radius: 10em;
+}

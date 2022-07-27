@@ -29,6 +29,7 @@ Route::middleware('auth')
     Route::resource('posts', 'PostController');
     Route::get('users', 'UserController@index')->name('users.index');
     Route::resource('categories', 'CategoryController');
+    Route::resource('tags', 'TagController');
 
 
 
