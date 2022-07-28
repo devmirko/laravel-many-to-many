@@ -119,6 +119,7 @@ class PostController extends Controller
         if (Auth::id() != $post->user_id) abort(401);
 
         // TODO: inplement soft deleting
+        $post->tags()->detach();
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('deleted', "Il post {$post->title} è stato eliminato");
